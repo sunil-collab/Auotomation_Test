@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+  <test name="Test">
+	
+	#if we add all groups inside the suit level it will run all attribution at class level 
+	<groups>	
+		<define name = "dailyBuild">
+			<include name="smoke"/>
+			<include name = "sanity"/>
+			</define>			
+		<define name = "weeklyBUild">
+			<include name = "regression"/>
+			<include name = "smoke"/>
+			<include name = "functional"/>
+			<include name = "sanity"/>
+			</define>
+			<define name = "everyBuild">
+			<include name = "smoke"/>			
+			</define>
+			<run>
+				<include name ="dailyBuild"/>
+			</run>
+			</groups>
+    <classes>
+      <class name="TestNGGroup.TestGroup1"/> 
+        <class name="TestNGGroup.TestGroup2"/> 
+    </classes>
+
+  </test> <!-- Test --> 
+</suite> <!-- Suite -->
+
